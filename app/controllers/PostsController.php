@@ -9,7 +9,7 @@
 class PostsController extends BaseController {
     public function getIndex(){
         $posts = Post::with('Author')->orderBy('id', 'DESC')->get();
-        return View::make('index')->with('posts',$posts);
+        return View::make('posts.index')->with('posts',$posts);
     }
     public function getAdmin(){
         return View::make('posts.addpost');

@@ -15,12 +15,12 @@
                 Welcome to Admin Area, {{Auth::user()->name}} ! -
                 <b>{{link_to_route('logout','Logout')}}</b>
             </h1>
-            <form name="add_post" method="POST" action="{{URL::route('add_new_
-            post')}}">
+            <form name="add_post" method="POST" action="{{URL::route('add_new_post')}}">
                 <p><input type="text" name="title" placeholder="Post Title" value=""/></p>
                 <p><textarea name="content" placeholder="Post Content"></textarea></p>
-                <p><input type="submit" name="submit" /></p>
-            </form>>
+                <input type="hidden" name="author_id" value="{{ Auth::user()->id }}"/>
+                <p><input type="submit" name="submit" value="Submit" /></p>
+            </form>
         </div>
     </section>
 @else
@@ -31,8 +31,7 @@
                 <p><input type="text" name="email" value="" placeholder="Email"></p>
                 <p><input type="password" name="password" value=""
                 placeholder="Password"></p>
-                <p class="submit"><input type="submit" name="commit" value="Login"></
-                p>
+                <p class="submit"><input type="submit" name="commit" value="Login"></p>
             </form>
         </div>
     </section>
