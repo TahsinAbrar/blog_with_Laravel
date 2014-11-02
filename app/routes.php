@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
 Route::get('/', array(
     'as' => 'index',
     'uses' => 'PostsController@getIndex'
@@ -27,7 +23,7 @@ Route::post('/add', array(
     'as' => 'add_new_post',
     'uses' => 'PostsController@postAdd'
 ));
-Rotue::post('login', array(
+Route::post('login', array(
     'as' => 'login',
     'uses' => 'UsersController@postLogin'
 ));
