@@ -25,6 +25,7 @@ html5.js"></script>
         </article>
         @endforeach
         </section>
+        {{ $posts->links() }}
     </section>
     <footer>
         <section id="footer-area">
